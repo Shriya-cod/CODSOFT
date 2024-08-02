@@ -90,7 +90,7 @@ void editTask(vector<string>& tasks){
 
 
 void saveTasks(const vector<string>& tasks){
-    ofstream outFile("tasks.cpp");
+    ofstream outFile("To-do_list.cpp");
     for(const auto & task: tasks){
         outFile << task << '\n';    
     }
@@ -119,12 +119,16 @@ int main(){
                 break;
             
             case 4:
-                editTask(tasks);
+                markAsCompleted(tasks);
                 break;
             
             case 5:
-                saveTasks(tasks);
+                editTask(tasks);
                 return 0;
+
+            case 6:
+                saveTasks(tasks);
+                break;
             
             default:
                 cout <<"Invalid choice\n";
